@@ -1,8 +1,8 @@
-## 0x1D. C - Binary trees
+# 0x1D. C - Binary trees
 
-# Learning Objectives
+## Learning Objectives
 
-General
+## General
 <ol>
 <li>What is a binary tree</li>
 <li>What is the difference between a binary tree and a Binary Search Tree</li>
