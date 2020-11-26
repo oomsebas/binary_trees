@@ -29,8 +29,9 @@ size_t binary_tree_nodes(const binary_tree_t *tree)
 	if (tree == NULL)
 		return (0);
 
+	root = is_node(tree);
 	leaves_l = is_node(tree->left) ? 1 : binary_tree_nodes(tree->left);
 	leaves_r = is_node(tree->right) ? 1 :  binary_tree_nodes(tree->right);
-	root = is_node(tree);
+
 	return (leaves_l + leaves_r + root);
 }
