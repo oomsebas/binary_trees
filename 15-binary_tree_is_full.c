@@ -5,11 +5,11 @@
  * @node: node to check.
  * Return: 1 if is full, 0 if not.
  */
-static int is_full(const binary_tree_t *node)
+static int is_leaf(const binary_tree_t *node)
 {
 	if (node == NULL)
 		return (0);
-	if (node != NULL && node->left == NULL && node->right == NULL)
+	if (node->left == NULL && node->right == NULL)
 		return (1);
 	return (0);
 }
@@ -26,10 +26,9 @@ int binary_tree_is_full(const binary_tree_t *tree)
 
 	if (tree == NULL)
 		return (0);
-	if (is_full(tree))
-		return (1);
-	left = binary_tree_is_full(tree->left);
-	right = binary_tree_is_full(tree->right);
+
+	left = is_leaf(tree) ? 1 : binary_tree_is_full(tree->left);
+	right = is_leaf(tree) ? 1: binary_tree_is_full(tree->right);
 	if (left == 0 || right == 0)
 		return (0);
 	return (1);
