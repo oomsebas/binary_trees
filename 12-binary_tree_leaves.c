@@ -22,14 +22,14 @@ static int is_leaf(const binary_tree_t *node)
 size_t binary_tree_leaves(const binary_tree_t *tree)
 {
 	size_t leaves_l;
-	size_t height_r;
+	size_t leaves_r;
 	size_t root;
 
 	if (tree == NULL)
 		return (0);
 
-	height_l = is_leaf(tree->left) ? 1 : binary_tree_leaves(tree->left);
-	height_r = is_leaf(tree->right) ? 1 :  binary_tree_leaves(tree->right);
+	leaves_l = is_leaf(tree->left) ? 1 : binary_tree_leaves(tree->left);
+	leaves_r = is_leaf(tree->right) ? 1 :  binary_tree_leaves(tree->right);
 	root = is_leaf(tree);
-	return (height_l + height_r + root);
+	return (leaves_l + leaves_r + root);
 }
